@@ -5,6 +5,7 @@ import com.atguigu.commonutils.R;
 import com.atguigu.eduservice.entity.EduTeacher;
 import com.atguigu.eduservice.entity.vo.TeacherQueryVo;
 import com.atguigu.eduservice.service.EduTeacherService;
+import com.atguigu.servicebase.exceptionhandler.GuliException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.*;
@@ -42,7 +43,11 @@ public class EduTeacherController {
         List<EduTeacher> teacherList = eduTeacherService.list(null);
 
         //自己制造异常
-        int a = 10/0;
+        try {
+            int a = 10/0;
+        }catch (Exception e){
+            throw new GuliException(20001,"执行了自定义异常处理。。。。");
+        }
 
         return R.ok().data("items",teacherList);
     }
