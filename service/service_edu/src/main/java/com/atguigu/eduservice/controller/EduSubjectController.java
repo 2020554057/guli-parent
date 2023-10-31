@@ -2,15 +2,16 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.entity.subject.OneSubject;
 import com.atguigu.eduservice.service.EduSubjectService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 /**
  * <p>
@@ -28,6 +29,7 @@ public class EduSubjectController {
     @Autowired
     private EduSubjectService eduSubjectService;
 
+    @ApiOperation("上传excel添加课程分类")
     //添加课程分类
     //获取上传过来的文件，把文件读取出来
     @PostMapping("/addSubject")
@@ -37,5 +39,13 @@ public class EduSubjectController {
         return R.ok();
     }
 
+    @ApiOperation("嵌套数据列表")
+    //课程分类列表（树形）
+    @GetMapping("/getAllSubject")
+    public R getAllSubject(){
+        //list集合泛型是一级分类，因为一级分类有他本身和二级分类的集合
+        List<OneSubject> list = eduSubjectService.getAllOneTwoSubject();
+        return R.ok().data("list",list);
+    }
 }
 
