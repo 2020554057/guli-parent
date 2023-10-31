@@ -28,6 +28,7 @@ import java.util.Map;
 @Api(description="讲师管理")
 @RestController
 @RequestMapping("/eduservice/teacher")
+@CrossOrigin    //解决跨域问题
 public class EduTeacherController {
 
     @Autowired
@@ -61,12 +62,12 @@ public class EduTeacherController {
     @DeleteMapping("/{id}")
     public R removeTeacher(
             @ApiParam(name = "id", value = "讲师ID", required = true)
-            @PathVariable("id") Integer id){
+            @PathVariable("id") String id){
         boolean flag = eduTeacherService.removeById(id);
         if (false){
-            return R.ok();
+            return R.error();
         }else {
-           return R.error();
+           return R.ok();
         }
     }
 
@@ -130,6 +131,8 @@ public class EduTeacherController {
         if(!StringUtils.isEmpty(end)){
             queryWrapper.le("gmt_create", end);
         }
+        //按添加时间先后排序
+        queryWrapper.orderByDesc("gmt_create");
 
         //把条件构造器传入，进行分页
         eduTeacherService.page(pageTeacher,queryWrapper);
