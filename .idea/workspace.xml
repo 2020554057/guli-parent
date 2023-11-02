@@ -4,36 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26d9ea1d-240c-4baf-acef-ea8226ab5feb" name="Changes" comment="添加了统一异常处理，特定异常处理，自定义异常处理和logback日志功能">
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/controller/EduLoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/controller/EduSubjectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/entity/EduSubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/entity/excel/SubjectData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/listener/SubjectExcelListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/mapper/EduSubjectMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/mapper/xml/EduSubjectMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/service/EduSubjectService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/service/impl/EduSubjectServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/test/java/com/atguigu/eduservice/excel/DemoData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/test/java/com/atguigu/eduservice/excel/ExcelListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_edu/src/test/java/com/atguigu/eduservice/excel/TestEasyExcel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/atguigu/oss/OssApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/atguigu/oss/controller/OssController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/atguigu/oss/service/OssService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/atguigu/oss/service/impl/OssServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/java/com/atguigu/oss/utils/AliyunPropertiesUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_oss/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_vod/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/service_vod/src/main/java/com/atguigu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/controller/EduTeacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/controller/EduTeacherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/entity/EduTeacher.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/main/java/com/atguigu/eduservice/entity/EduTeacher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/src/test/java/com/atguigu/eduservice/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/src/test/java/com/atguigu/eduservice/CodeGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/target/classes/com/atguigu/eduservice/controller/EduTeacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/target/classes/com/atguigu/eduservice/controller/EduTeacherController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service_edu/target/test-classes/com/atguigu/eduservice/CodeGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/service/service_edu/target/test-classes/com/atguigu/eduservice/CodeGenerator.class" afterDir="false" />
+    <list default="true" id="26d9ea1d-240c-4baf-acef-ea8226ab5feb" name="Changes" comment="fixed: 阿里云账号隐藏">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,31 +39,31 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "80d6b1810afc3b541d2c22431941907d",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;80d6b1810afc3b541d2c22431941907d&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -99,7 +71,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.EduApplication">
+  <component name="RunManager" selected="Spring Boot.OssApplication">
     <configuration name="TestEasyExcel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.atguigu.eduservice.excel.TestEasyExcel" />
       <module name="service_edu" />
@@ -165,9 +137,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.EduApplication" />
+        <item itemvalue="Spring Boot.OssApplication" />
         <item itemvalue="JUnit.CodeGenerator.run" />
         <item itemvalue="Application.TestEasyExcel" />
-        <item itemvalue="Spring Boot.OssApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +170,10 @@
       <workItem from="1698201154581" duration="4824000" />
       <workItem from="1698475027155" duration="8094000" />
       <workItem from="1698548957256" duration="10909000" />
-      <workItem from="1698738839190" duration="5578000" />
+      <workItem from="1698738839190" duration="13645000" />
+      <workItem from="1698802867762" duration="10825000" />
+      <workItem from="1698833799300" duration="5798000" />
+      <workItem from="1698888027569" duration="1287000" />
     </task>
     <task id="LOCAL-00001" summary="完成了项目构建和讲师模块的接口">
       <created>1698158373696</created>
@@ -221,7 +196,28 @@
       <option name="project" value="LOCAL" />
       <updated>1698203090134</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat: 课程分类管理">
+      <created>1698765887182</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698765887182</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: 课程管理——添加课程信息">
+      <created>1698888613615</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698888613615</updated>
+    </task>
+    <task id="LOCAL-00006" summary="fixed: 阿里云账号隐藏">
+      <created>1698888785346</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698888785346</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +239,9 @@
     <MESSAGE value="完成了项目构建和讲师模块的接口" />
     <MESSAGE value="上传了README.md 项目描述文档" />
     <MESSAGE value="添加了统一异常处理，特定异常处理，自定义异常处理和logback日志功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了统一异常处理，特定异常处理，自定义异常处理和logback日志功能" />
+    <MESSAGE value="feat: 课程分类管理" />
+    <MESSAGE value="feat: 课程管理——添加课程信息" />
+    <MESSAGE value="fixed: 阿里云账号隐藏" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed: 阿里云账号隐藏" />
   </component>
 </project>
