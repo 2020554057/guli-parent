@@ -9,17 +9,21 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <!--父工程的坐标-->
     <groupId>com.atguigu</groupId>
     <artifactId>guli-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>guli-parent</name>
     <description>guli-parent</description>
+
+    <!--父工程下的子模块-->
     <modules>
         <module>service</module>
         <module>common</module>
     </modules>
-    <packaging>pom</packaging>
+    <packaging>pom</packaging><!--打包方式pom，表示该工程下还有子模块-->
 
+    <!--规定依赖的版本号-->
     <properties>
         <java.version>1.8</java.version>
         <guli.version>0.0.1-SNAPSHOT</guli.version>
@@ -48,10 +52,10 @@
         <mysql.version>8.0.26</mysql.version>
     </properties>
 
-
+    <!--dependencyManagement：父工程中声明以下依赖，但没有使用。子工程需要使用时直接引用-->
     <dependencyManagement>
         <dependencies>
-            <!--Spring Cloud-->
+            <!--Spring Cloud H版-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -60,6 +64,7 @@
                 <scope>import</scope>
             </dependency>
 
+            <!--Spring Cloud Alibaba-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -67,6 +72,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
             <!--mybatis-plus 持久层-->
             <dependency>
                 <groupId>com.baomidou</groupId>
@@ -150,6 +156,7 @@
                 <version>${httpclient.version}</version>
             </dependency>
 
+            <!--GSON是Google提供的用来在Java对象和JSON数据之间进行映射的Java类库-->
             <dependency>
                 <groupId>com.google.code.gson</groupId>
                 <artifactId>gson</artifactId>
@@ -200,12 +207,14 @@
                 <version>${json.version}</version>
             </dependency>
 
+            <!--commons-dbutils JDBC数据库连接工具类-->
             <dependency>
                 <groupId>commons-dbutils</groupId>
                 <artifactId>commons-dbutils</artifactId>
                 <version>${commons-dbutils.version}</version>
             </dependency>
 
+            <!--otter,阿里巴巴分布式数据库同步系统-->
             <dependency>
                 <groupId>com.alibaba.otter</groupId>
                 <artifactId>canal.client</artifactId>

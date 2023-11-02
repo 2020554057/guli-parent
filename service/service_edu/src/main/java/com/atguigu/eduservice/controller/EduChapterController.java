@@ -2,6 +2,7 @@ package com.atguigu.eduservice.controller;
 
 
 import com.atguigu.commonutils.R;
+import com.atguigu.eduservice.entity.EduChapter;
 import com.atguigu.eduservice.entity.chapter.ChapterVo;
 import com.atguigu.eduservice.service.EduChapterService;
 import io.swagger.annotations.Api;
@@ -34,10 +35,58 @@ public class EduChapterController {
      * @return
      */
     @ApiOperation(value = "根据课程Id查询章节和小节")
-    @GetMapping("getChapterVideo/{courseId}")
+    @GetMapping("/getChapterVideo/{courseId}")
     public R getChapterVideo(@PathVariable String courseId){
         List<ChapterVo> list = chapterService.getChapterVideoByCourseId(courseId);
         return R.ok().data("allChapterVideo",list);
+    }
+
+    /**
+     * 添加章节
+     * @param eduChapter
+     * @return
+     */
+    @PostMapping("/addChapter")
+    public R addChapter(@RequestBody EduChapter eduChapter){
+        chapterService.save(eduChapter);
+        return R.ok();
+    }
+
+    /**
+     * 根据章节id查询章节信息
+     * @param chapterId
+     * @return
+     */
+    @GetMapping("/getChapter/{chapterId}")
+    public R getChapterInfoById(@PathVariable String chapterId){
+        EduChapter eduChapter = chapterService.getById(chapterId);
+        return R.ok().data("chapter",eduChapter);
+    }
+
+    /**
+     * 修改章节信息
+     * @param eduChapter
+     * @return
+     */
+    @PostMapping("/updateChapter")
+    public R updateChapter(@RequestBody EduChapter eduChapter){
+        chapterService.updateById(eduChapter);
+        return R.ok();
+    }
+
+    /**
+     * 删除章节
+     * @param chapterId
+     * @return
+     */
+    @DeleteMapping("/deleteChapter/{chapterId}")
+    public R deleteChapter(@PathVariable String chapterId){
+        boolean flag = chapterService.deleteChapter(chapterId);
+        if (flag){
+            return R.ok();
+        }else {
+            return R.error();
+        }
     }
 }
 

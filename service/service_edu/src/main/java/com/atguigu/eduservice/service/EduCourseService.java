@@ -16,4 +16,10 @@ public interface EduCourseService extends IService<EduCourse> {
 
     //添加课程
     public String addCourse(CourseInfoVo courseInfoVo);
+
+    //根据课程id查询课程基本信息
+    public CourseInfoVo getCourseInfoById(String courseId);
+
+    //修改课程基本信息
+    public void updateCourseInfo(CourseInfoVo courseInfoVo);
 }
