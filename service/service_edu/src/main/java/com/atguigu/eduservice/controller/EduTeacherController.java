@@ -44,11 +44,11 @@ public class EduTeacherController {
         List<EduTeacher> teacherList = eduTeacherService.list(null);
 
         //自己制造异常
-        try {
+        /*try {
             int a = 10/0;
         }catch (Exception e){
             throw new GuliException(20001,"执行了自定义异常处理。。。。");
-        }
+        }*/
 
         return R.ok().data("items",teacherList);
     }

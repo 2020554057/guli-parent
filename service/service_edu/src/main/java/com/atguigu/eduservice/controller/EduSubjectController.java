@@ -21,7 +21,7 @@ import java.util.List;
  * @author 吴苏杰
  * @since 2023-10-31
  */
-@Api(description="课程管理")
+@Api(description="课程分类管理")
 @RestController
 @RequestMapping("/eduservice/edusubject")
 @CrossOrigin
