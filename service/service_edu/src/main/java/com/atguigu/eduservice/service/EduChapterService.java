@@ -21,4 +21,6 @@ public interface EduChapterService extends IService<EduChapter> {
 
     //删除章节
     public boolean deleteChapter(String chapterId);
+
+    public void deleteChapterByCourseId(String courseId);
 }
