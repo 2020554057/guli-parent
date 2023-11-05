@@ -28,8 +28,8 @@ public class TestVod {
      * @throws ClientException
      */
     public static void main(String[] args) throws ClientException {
-        String accessKeyId = "wsjLTAI5t9qs51B8cNPUfFLBUZQ";
-        String accessKeySecret = "WNstLAbZPlQwmi0B4ZTJPRYeyJCnzgwsj";
+        String accessKeyId = "wsjLTAI5t36649qs51545B8cNPUfFLBUZQ";
+        String accessKeySecret = "WNstLAbZ424PlQwmi0224B4ZTJ55PRYeyJCnzgwsj";
 
         String title = "6 - What If I Want to Move Faster - upload by sdk";   //上传之后文件名称
         String fileName = "D:\\MyFiles\\Java学习之路\\6.项目实战\\谷粒学院\\项目资料\\1-阿里云上传测试视频\\6 - What If I Want to Move Faster.mp4";  //本地文件路径和名称
@@ -59,7 +59,7 @@ public class TestVod {
      */
     public static void getPlayAuth() throws Exception {
         //创建初始化对象
-        DefaultAcsClient client = InitObject.initVodClient("wsjLTAI5t9qs51B8cNPUfFLBUZQ", "WNstLAbZPlQwmi0B4ZTJPRYeyJCnzgwsj");
+        DefaultAcsClient client = InitObject.initVodClient("wsjLTAI5t639q436s554351B8cNPUf66FLBUZQ", "WNstLA34bZPlQwmi6460B445ZTJP646RYeyJCnzgwsj");
 
         //创建获取视频凭证request和response对象
         GetVideoPlayAuthRequest request = new GetVideoPlayAuthRequest();
@@ -81,7 +81,7 @@ public class TestVod {
      */
     public static void getPlayUrl() throws Exception {
         //创建初始化对象
-        DefaultAcsClient client = InitObject.initVodClient("wsjLTAI5t9qs51B8cNPUfFLBUZQ", "WNstLAbZPlQwmi0B4ZTJPRYeyJCnzgwsj");
+        DefaultAcsClient client = InitObject.initVodClient("wsjLTAI5好的话t9qs5636hfg1B他545488cN6PU他忽然FLBUZQ", "WNgrgstLAbrgrgZPlgQwmi0BgrTJPgrRYeyJCnzgrgwsj");
         GetPlayInfoResponse response = new GetPlayInfoResponse();
         GetPlayInfoRequest request = new GetPlayInfoRequest();
 
