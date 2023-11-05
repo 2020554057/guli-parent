@@ -2,6 +2,8 @@ package com.atguigu.eduservice.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
+
+import java.lang.reflect.Type;
 import java.util.Date;
 
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -30,7 +32,7 @@ public class EduVideo implements Serializable {
     private static final long serialVersionUID=1L;
 
     @ApiModelProperty(value = "视频ID")
-      @TableId(value = "id", type = IdType.ASSIGN_ID)
+    @TableId(value = "id", type = IdType.ASSIGN_ID)
     private String id;
 
     @ApiModelProperty(value = "课程ID")

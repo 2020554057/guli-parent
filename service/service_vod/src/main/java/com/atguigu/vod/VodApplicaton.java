@@ -1,4 +1,4 @@
-package com.atguigu.oss;
+package com.atguigu.vod;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,20 +6,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
-/**
- * ClassName:${NAME}
- * Package:IntelliJ IDEA
- * Description:
- *
- * @Author 吴苏杰
- * @Create 2023/10/29 14:24
- * @Version 1.0
- */
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)//排除数据源的自动配置
-@ComponentScan(basePackages = {"com.atguigu"})
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)//排除数据库的自动配置
+@ComponentScan(basePackages = {"com.atguigu"})//包扫描
 @EnableDiscoveryClient//服务注册
-public class OssApplication {
+public class VodApplicaton {
     public static void main(String[] args) {
-        SpringApplication.run(OssApplication.class,args);
+        SpringApplication.run(VodApplicaton.class,args);
     }
 }

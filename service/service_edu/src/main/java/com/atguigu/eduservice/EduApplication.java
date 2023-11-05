@@ -1,7 +1,8 @@
-package com.atguigu;
+package com.atguigu.eduservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 
@@ -16,7 +17,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 //因为swaggerconfig使用了@Configuration，要使启动类扫描到，要加注解，不然只扫描当前包下的内容
-@ComponentScan(basePackages = {"com.atguigu","com.atguigu.servicebase"})
+@ComponentScan(basePackages = {"com.atguigu"})
+@EnableDiscoveryClient//服务注册
 public class EduApplication {
     public static void main(String[] args) {
         SpringApplication.run(EduApplication.class,args);
