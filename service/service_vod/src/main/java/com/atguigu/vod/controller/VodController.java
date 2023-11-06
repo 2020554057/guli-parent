@@ -13,6 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 /**
  * ClassName:VodController
  * Package:IntelliJ IDEA
@@ -44,7 +46,12 @@ public class VodController {
         return R.ok().data("videoId",videoId);
     }
 
-    @DeleteMapping("removeAlyVideo/{id}")
+    /**
+     * 删除阿里云上的视频（单个）
+     * @param id
+     * @return
+     */
+    @DeleteMapping("/removeAlyVideo/{id}")
     public R removeAlyVideo(@PathVariable String id){
         try {
             //初始化对象
@@ -59,6 +66,17 @@ public class VodController {
             e.printStackTrace();
             throw new GuliException(20001,"删除视频失败");
         }
+    }
+
+    /**
+     * 删除阿里云上的视频（批量）
+     * @param videoIdList
+     * @return
+     */
+    @DeleteMapping("/deleteBatchVideo")
+    public R deleteBatchVideo(@RequestParam("videoIdList") List<String> videoIdList){
+        vodService.deleteBatchVideo(videoIdList);
+        return R.ok();
     }
 
 }
