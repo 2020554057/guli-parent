@@ -6,6 +6,7 @@ import com.atguigu.eduservice.client.VodClient;
 import com.atguigu.eduservice.entity.EduVideo;
 import com.atguigu.eduservice.service.EduVideoService;
 import com.atguigu.servicebase.exceptionhandler.GuliException;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
  * @author 吴苏杰
  * @since 2023-11-01
  */
+@Api(description = "小节（视频）管理")
 @RestController
 @RequestMapping("/eduservice/video")
 @CrossOrigin
