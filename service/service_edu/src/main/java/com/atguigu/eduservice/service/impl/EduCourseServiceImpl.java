@@ -10,10 +10,14 @@ import com.atguigu.eduservice.service.EduCourseDescriptionService;
 import com.atguigu.eduservice.service.EduCourseService;
 import com.atguigu.eduservice.service.EduVideoService;
 import com.atguigu.servicebase.exceptionhandler.GuliException;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -118,5 +122,17 @@ public class EduCourseServiceImpl extends ServiceImpl<EduCourseMapper, EduCourse
         if (result == 0){
             throw new GuliException(20001,"删除失败！");
         }
+    }
+
+    //查询首页热门课程集合
+    @Cacheable(value = "courseList",key = "'selectIndexCourseList'")//添加redis缓存
+    @Override
+    public List<EduCourse> indexCourse() {
+        //查询前8条热门课程
+        QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
+        wrapper.orderByDesc("id");
+        wrapper.last("limit 8");
+        List<EduCourse> courseList = baseMapper.selectList(wrapper);
+        return courseList;
     }
 }

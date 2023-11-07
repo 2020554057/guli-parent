@@ -27,7 +27,7 @@ import java.util.List;
  */
 @Api(description = "前台显示课程和老师")
 @RestController
-@RequestMapping("/eduservice/indexfront")
+@RequestMapping("/eduservice/indexFront")
 @CrossOrigin
 public class IndexFrontController {
 
@@ -38,23 +38,15 @@ public class IndexFrontController {
     private EduTeacherService teacherService;
 
     @ApiOperation(value = "前台查询课程和老师")
-    //查询前8条课程，查询前4条老师
     @GetMapping("/index")
     public R index(){
-        //查询前8条热门课程
-        QueryWrapper<EduCourse> wrapper = new QueryWrapper<>();
-        wrapper.orderByDesc("id");
-        wrapper.last("limit 8");
-        List<EduCourse> courseList = courseService.list(wrapper);
 
-        //查询前4条名师
-        QueryWrapper<EduTeacher> queryWrapper = new QueryWrapper<>();
-        wrapper.orderByDesc("id");
-        wrapper.last("limit 8");
-        List<EduTeacher> teacherList = teacherService.list(queryWrapper);
+        //查询前8条课程，查询前4条老师
+        List<EduCourse> courseList = courseService.indexCourse();
+        List<EduTeacher> teacherList = teacherService.indexTeacher();
 
         //返回数据
-        return R.ok().data("courseList",courseList).data("teacherList",courseList);
+        return R.ok().data("courseList",courseList).data("teacherList",teacherList);
     }
 
 }

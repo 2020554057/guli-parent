@@ -13,8 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0
  */
 @SpringBootApplication
-public class Main {
+public class AclApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class,args);
+        SpringApplication.run(AclApplication.class,args);
     }
 }
