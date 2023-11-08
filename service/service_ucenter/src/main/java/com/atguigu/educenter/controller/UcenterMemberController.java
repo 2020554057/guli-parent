@@ -1,13 +1,17 @@
 package com.atguigu.educenter.controller;
 
 
+import com.atguigu.commonutils.JwtUtils;
 import com.atguigu.commonutils.R;
 import com.atguigu.educenter.entity.UcenterMember;
+import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.atguigu.educenter.service.UcenterMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * <p>
@@ -26,8 +30,8 @@ public class UcenterMemberController {
     @Autowired
     private UcenterMemberService memberService;
 
-    @ApiOperation(value = "用户登录")
     //登录
+    @ApiOperation(value = "用户登录")
     @PostMapping ("/login")
     public R loginUser(@RequestBody UcenterMember member){
         //member对象封装手机号和密码
@@ -38,6 +42,21 @@ public class UcenterMemberController {
     }
 
     //注册
+    @ApiOperation(value = "用户注册")
+    @PostMapping("/register")
+    public R register(@RequestBody RegisterVo registerVo){
+        memberService.register(registerVo);
+        return R.ok().message("注册成功");
+    }
 
+    //根据token获取用户信息
+    @GetMapping("getMemberInfo")
+    public R getMemberInfo(HttpServletRequest request){
+        //调用jwt工具类的方法，根据request对象获取头信息，返回用户id
+        String memberId = JwtUtils.getMemberIdByJwtToken(request);
+        //查询数据库根据用户id获取用户信息
+        UcenterMember member = memberService.getById(memberId);
+        return R.ok().data("userInfo",member);
+    }
 }
 

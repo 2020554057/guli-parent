@@ -1,6 +1,7 @@
 package com.atguigu.educenter.service;
 
 import com.atguigu.educenter.entity.UcenterMember;
+import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,6 +14,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UcenterMemberService extends IService<UcenterMember> {
 
-    //登录
+    //用户登录
     public String login(UcenterMember member);
+
+    //用户注册
+    public void register(RegisterVo registerVo);
 }
