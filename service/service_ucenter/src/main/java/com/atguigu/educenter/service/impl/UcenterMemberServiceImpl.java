@@ -112,4 +112,13 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         //注册成功返回
         return R.ok().message("注册成功！");
     }
+
+    //根据openid查询，判断微信用户是否存在
+    @Override
+    public UcenterMember getOpenIdMember(String openid) {
+        QueryWrapper<UcenterMember> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("openid",openid);
+        UcenterMember member = baseMapper.selectOne(queryWrapper);
+        return member;
+    }
 }
