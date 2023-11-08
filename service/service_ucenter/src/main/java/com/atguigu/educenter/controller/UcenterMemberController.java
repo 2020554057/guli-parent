@@ -37,20 +37,21 @@ public class UcenterMemberController {
         //member对象封装手机号和密码
         //调用service方法实现登录
         //返回token值，使用jwt生成
-        String token = memberService.login(member);
-        return R.ok().data("token",token);
+        R login = memberService.login(member);
+        return login;
     }
 
     //注册
     @ApiOperation(value = "用户注册")
     @PostMapping("/register")
     public R register(@RequestBody RegisterVo registerVo){
-        memberService.register(registerVo);
-        return R.ok().message("注册成功");
+        R register = memberService.register(registerVo);
+        return register;
+        //return R.ok().message("注册成功");
     }
 
     //根据token获取用户信息
-    @GetMapping("getMemberInfo")
+    @GetMapping("/getMemberInfo")
     public R getMemberInfo(HttpServletRequest request){
         //调用jwt工具类的方法，根据request对象获取头信息，返回用户id
         String memberId = JwtUtils.getMemberIdByJwtToken(request);

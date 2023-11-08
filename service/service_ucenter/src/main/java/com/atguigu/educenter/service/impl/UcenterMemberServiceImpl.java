@@ -1,6 +1,7 @@
 package com.atguigu.educenter.service.impl;
 
 import com.atguigu.commonutils.JwtUtils;
+import com.atguigu.commonutils.R;
 import com.atguigu.educenter.entity.UcenterMember;
 import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.atguigu.educenter.mapper.UcenterMemberMapper;
@@ -30,14 +31,15 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
 
     //用户登录
     @Override
-    public String login(UcenterMember member) {
+    public R login(UcenterMember member) {
         //获取手机号和密码
         String mobile = member.getMobile();
         String password = member.getPassword();
 
         //判断手机号和密码非空
         if (StringUtils.isEmpty(mobile) || StringUtils.isEmpty(password)){
-            throw new GuliException(20001,"登录失败");
+            //throw new GuliException(20001,"登录失败");
+            return R.error().message("账号或密码不能为空！");
         }
 
         //判断手机号是否正确
@@ -45,28 +47,31 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         queryWrapper.eq("mobile",mobile);
         UcenterMember mobileMember = baseMapper.selectOne(queryWrapper);
         if (mobileMember == null){
-            throw new GuliException(20001,"登录失败");
+            //throw new GuliException(20001,"登录失败");
+            return R.error().message("账号不存在！");
         }
 
         //判断密码是否正确
         if (!MD5.encrypt(password).equals(mobileMember.getPassword())){
-            throw new GuliException(20001,"登录失败");
+            //throw new GuliException(20001,"登录失败");
+            return R.error().message("密码错误！");
         }
 
         //判断用户是否禁用
         if (mobileMember.getIsDisabled()){
-            throw new GuliException(20001,"登录失败");
+            //throw new GuliException(20001,"登录失败");
+            return R.error().message("该账号已被禁用！");
         }
 
         //登录成功
         //生成token字符串，使用jwt工具类
         String jwtToken = JwtUtils.getJwtToken(mobileMember.getId(), mobileMember.getNickname());
-        return jwtToken;
+        return R.ok().data("token",jwtToken);
     }
 
     //用户注册
     @Override
-    public void register(RegisterVo registerVo) {
+    public R register(RegisterVo registerVo) {
         //获取前端用户注册的数据
         String mobile = registerVo.getMobile();
         String code = registerVo.getCode();
@@ -75,13 +80,15 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
 
         //判断注册信息非空
         if (StringUtils.isEmpty(mobile) || StringUtils.isEmpty(password) || StringUtils.isEmpty(code) || StringUtils.isEmpty(nickname)){
-            throw new GuliException(20001,"注册失败");
+            //throw new GuliException(20001,"注册失败");
+            return R.error().message("注册信息不能为空！");
         }
 
         //判断验证码是否正确
         String redisCode = redisTemplate.opsForValue().get(mobile);
         if (!code.equals(redisCode)){
-            throw new GuliException(20001,"注册失败");
+            //throw new GuliException(20001,"注册失败");
+            return R.error().message("验证码错误！");
         }
 
         //判断手机号是否存在
@@ -89,7 +96,8 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         queryWrapper.eq("mobile",mobile);
         Long count = baseMapper.selectCount(queryWrapper);
         if (count>0){
-            throw new GuliException(20001,"注册失败");
+            //throw new GuliException(20001,"注册失败");
+            return R.error().message("账号已存在！");
         }
 
         //数据库中添加注册信息
@@ -101,5 +109,7 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         ucenterMember.setAvatar("https://edu-guli-wsj.oss-cn-beijing.aliyuncs.com/2023/10/29/b98237cc5af44537a26d27c38cb1a827file.png");
         baseMapper.insert(ucenterMember);
 
+        //注册成功返回
+        return R.ok().message("注册成功！");
     }
 }

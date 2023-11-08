@@ -29,16 +29,16 @@ import java.util.concurrent.TimeUnit;
 @CrossOrigin
 public class MsmController {
 
-    //旧版本的使用方式
-    @Autowired
-    private MsmService msmService;
+//    阿里云短信服务
+//    @Autowired
+//    private MsmService msmService;
 
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
 
     //发送短信的方法
-    @GetMapping("send/{phone}")
+    @GetMapping("/send/{phone}")
     public R sendMsm(@PathVariable String phone) {
 
         // 从redis获取验证码，如果能获取，直接返回
@@ -50,7 +50,8 @@ public class MsmController {
         // 获取不到就阿里云发送
         // 生成随机数，传递给阿里云进行发送
         code = RandomUtil.getFourBitRandom();
-        Map<String, Object> param = new HashMap<>();
+        //Map<String, Object> param = new HashMap<>();
+        Map<String, String> param = new HashMap<>();
         param.put("code", code);
 
         // 调用service发送短信的方法
@@ -62,9 +63,10 @@ public class MsmController {
         //boolean isSend = msmService.send(param, phone);
         if (isSend) {
             // 如果发送成功，把发送成功的code验证码保存到redis中，并设置有效时间，设置5分钟内有效
-            redisTemplate.opsForValue().set(phone, code, 5, TimeUnit.MINUTES);
+            redisTemplate.opsForValue().set(phone, code, 3, TimeUnit.MINUTES);
             return R.ok();
         } else {
+            System.out.println("生成的验证码："+code);
             return R.error().message("短信发送失败");
         }
 
