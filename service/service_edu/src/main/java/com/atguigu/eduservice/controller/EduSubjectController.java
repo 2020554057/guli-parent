@@ -26,12 +26,13 @@ import java.util.List;
 @RequestMapping("/eduservice/edusubject")
 @CrossOrigin
 public class EduSubjectController {
+
     @Autowired
     private EduSubjectService eduSubjectService;
 
-    @ApiOperation("上传excel添加课程分类")
     //添加课程分类
     //获取上传过来的文件，把文件读取出来
+    @ApiOperation("上传excel添加课程分类")
     @PostMapping("/addSubject")
     public R addSubject(MultipartFile file,EduSubjectService subjectService){
         //上传过来的excel文件
@@ -39,8 +40,8 @@ public class EduSubjectController {
         return R.ok();
     }
 
-    @ApiOperation("嵌套数据列表")
     //课程分类列表（树形）
+    @ApiOperation("嵌套数据列表")
     @GetMapping("/getAllSubject")
     public R getAllSubject(){
         //list集合泛型是一级分类，因为一级分类有他本身和二级分类的集合

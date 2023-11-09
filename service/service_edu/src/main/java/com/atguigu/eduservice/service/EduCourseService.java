@@ -1,11 +1,14 @@
 package com.atguigu.eduservice.service;
 
 import com.atguigu.eduservice.entity.EduCourse;
+import com.atguigu.eduservice.entity.frontvo.CourseFrontVo;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -33,5 +36,8 @@ public interface EduCourseService extends IService<EduCourse> {
     public void deleteCourse(String courseId);
 
     //查询首页热门课程集合
-    List<EduCourse> indexCourse();
+    public List<EduCourse> indexCourse();
+
+    //带条件分页查询课程
+    public Map<String, Object> getFrontCourseList(Page<EduCourse> pageCourse, CourseFrontVo courseFrontVo);
 }
