@@ -1,9 +1,11 @@
 package com.atguigu.eduservice.service;
 
 import com.atguigu.eduservice.entity.EduTeacher;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -16,5 +18,8 @@ import java.util.List;
 public interface EduTeacherService extends IService<EduTeacher> {
 
     //查询首页名师集合
-    List<EduTeacher> indexTeacher();
+    public List<EduTeacher> indexTeacher();
+
+    //分页查询讲师
+    public Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher);
 }
