@@ -2,6 +2,7 @@ package com.atguigu.eduservice.service;
 
 import com.atguigu.eduservice.entity.EduCourse;
 import com.atguigu.eduservice.entity.frontvo.CourseFrontVo;
+import com.atguigu.eduservice.entity.frontvo.CourseWebVo;
 import com.atguigu.eduservice.entity.vo.CourseInfoVo;
 import com.atguigu.eduservice.entity.vo.CoursePublishVo;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -40,4 +41,7 @@ public interface EduCourseService extends IService<EduCourse> {
 
     //带条件分页查询课程
     public Map<String, Object> getFrontCourseList(Page<EduCourse> pageCourse, CourseFrontVo courseFrontVo);
+
+    //查询课程详细的方法
+    public CourseWebVo getBaseCourseInfo(String courseId);
 }
