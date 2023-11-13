@@ -1,9 +1,10 @@
-package com.atguigu.educenter;
+package com.atguigu.eduorder;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -12,15 +13,16 @@ import org.springframework.context.annotation.ComponentScan;
  * Description:
  *
  * @Author 吴苏杰
- * @Create 2023/11/7 18:07
+ * @Create 2023/11/13 17:09
  * @Version 1.0
  */
 @SpringBootApplication
 @ComponentScan("com.atguigu")
-@MapperScan("com.atguigu.educenter.mapper")
 @EnableDiscoveryClient
-public class UcenterApplication {
+@EnableFeignClients
+@MapperScan("com.atguigu.eduorder.mapper")
+public class OrdersApplication {
     public static void main(String[] args) {
-        SpringApplication.run(UcenterApplication.class,args);
+        SpringApplication.run(OrdersApplication.class,args);
     }
 }

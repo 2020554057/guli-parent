@@ -3,6 +3,7 @@ package com.atguigu.educenter.controller;
 
 import com.atguigu.commonutils.JwtUtils;
 import com.atguigu.commonutils.R;
+import com.atguigu.commonutils.ordervo.UcenterMemberOrder;
 import com.atguigu.educenter.entity.UcenterMember;
 import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.atguigu.educenter.service.UcenterMemberService;
@@ -70,5 +71,13 @@ public class UcenterMemberController {
         return ucenterMember;
     }
 
+    //根据用户id查询用户信息(生成订单调用的方法)
+    @PostMapping("/getMemberInfoOrder/{memberId}")
+    public UcenterMemberOrder getMemberInfoOrder(@PathVariable String memberId){
+        UcenterMember member = memberService.getById(memberId);
+        UcenterMemberOrder ucenterMemberOrder = new UcenterMemberOrder();
+        BeanUtils.copyProperties(member,ucenterMemberOrder);
+        return ucenterMemberOrder;
+    }
 }
 
