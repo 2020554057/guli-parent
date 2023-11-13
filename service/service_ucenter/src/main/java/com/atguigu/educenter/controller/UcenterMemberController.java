@@ -8,6 +8,7 @@ import com.atguigu.educenter.entity.vo.RegisterVo;
 import com.atguigu.educenter.service.UcenterMemberService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,5 +60,15 @@ public class UcenterMemberController {
         UcenterMember member = memberService.getById(memberId);
         return R.ok().data("userInfo",member);
     }
+
+    //评论前先登录，查询用户信息
+    @PostMapping("/getMemberInfoById/{memberId}")
+    public UcenterMember getMemberInfoById(@PathVariable String memberId){
+        UcenterMember member = memberService.getById(memberId);
+        UcenterMember ucenterMember = new UcenterMember();
+        BeanUtils.copyProperties(member,ucenterMember);
+        return ucenterMember;
+    }
+
 }
 
