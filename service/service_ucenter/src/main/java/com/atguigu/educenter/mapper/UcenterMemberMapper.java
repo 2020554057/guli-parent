@@ -15,4 +15,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UcenterMemberMapper extends BaseMapper<UcenterMember> {
 
+    //根据日期查询注册人数
+    public Integer countRegister(String day);
 }

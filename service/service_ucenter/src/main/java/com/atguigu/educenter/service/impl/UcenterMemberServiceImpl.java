@@ -29,6 +29,9 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
     @Autowired
     private RedisTemplate<String,String> redisTemplate;
 
+    @Autowired
+    private UcenterMemberMapper ucenterMemberMapper;
+
     //用户登录
     @Override
     public R login(UcenterMember member) {
@@ -120,5 +123,12 @@ public class UcenterMemberServiceImpl extends ServiceImpl<UcenterMemberMapper, U
         queryWrapper.eq("openid",openid);
         UcenterMember member = baseMapper.selectOne(queryWrapper);
         return member;
+    }
+
+    //根据日期查询注册人数
+    @Override
+    public Integer countRegister(String day) {
+        Integer count = ucenterMemberMapper.countRegister(day);
+        return count;
     }
 }

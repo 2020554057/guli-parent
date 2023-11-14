@@ -2,4 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.educenter.mapper.UcenterMemberMapper">
 
+<!--    根据日期查询注册人数-->
+<!--    public Integer countRegister(String day);-->
+    <select id="countRegister" resultType="int">
+        select count(*) from ucenter_member uc
+        where DATE(uc.gmt_create) = #{day}
+    </select>
 </mapper>
