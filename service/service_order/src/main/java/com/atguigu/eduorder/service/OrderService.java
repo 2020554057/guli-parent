@@ -1,5 +1,6 @@
 package com.atguigu.eduorder.service;
 
+import com.atguigu.commonutils.R;
 import com.atguigu.eduorder.entity.Order;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -14,5 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface OrderService extends IService<Order> {
 
     //创建订单
-    public String createOrders(String courseId, String memberIdByJwtToken);
+    public R createOrders(String courseId, String memberIdByJwtToken);
 }

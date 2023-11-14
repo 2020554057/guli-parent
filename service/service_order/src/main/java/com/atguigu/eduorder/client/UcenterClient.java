@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @Version 1.0
  */
 @Component
-@FeignClient("service-ucenter")
+@FeignClient(value = "service-ucenter",fallback = UcenterClientImpl.class)
 public interface UcenterClient {
 
     //根据用户id查询用户信息(生成订单调用的方法)

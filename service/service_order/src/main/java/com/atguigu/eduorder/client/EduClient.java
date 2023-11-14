@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @Version 1.0
  */
 @Component
-@FeignClient("service-edu")
+@FeignClient(value = "service-edu",fallback = EduClientImpl.class)
 public interface EduClient {
 
     //根据用户id查询课程信息(生成订单调用的方法)
