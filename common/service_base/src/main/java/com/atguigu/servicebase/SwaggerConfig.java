@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .groupName("webApi")    //组名
                 .apiInfo(webApiInfo())  //API信息（就是下面定义的）
                 .select()
-                .paths(Predicates.not(PathSelectors.regex("/admin/.*")))
+                //.paths(Predicates.not(PathSelectors.regex("/admin/.*")))
                 .paths(Predicates.not(PathSelectors.regex("/error.*")))
                 .build();
 
