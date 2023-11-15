@@ -28,7 +28,7 @@ import java.util.HashMap;
  * @Version 1.0
  */
 @Api(tags = "微信登录接口")
-@CrossOrigin
+//@CrossOrigin
 @Controller
 @RequestMapping("/api/ucenter/wx")
 public class WxApiController {

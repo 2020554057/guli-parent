@@ -25,7 +25,7 @@ import java.util.Map;
  * @Version 1.0
  */
 @Api(description = "前端讲师显示管理")
-@CrossOrigin
+//@CrossOrigin
 @RestController
 @RequestMapping("/eduservice/teacherFront")
 public class TeacherFrontController {

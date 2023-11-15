@@ -24,7 +24,7 @@ import java.util.List;
 @Api(description = "首页banner 前端显示控制器")
 @RestController
 @RequestMapping("/educms/bannerFront")
-@CrossOrigin
+//@CrossOrigin
 public class BannerFrontController {
 
     @Autowired

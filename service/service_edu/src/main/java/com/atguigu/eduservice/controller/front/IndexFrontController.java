@@ -28,7 +28,7 @@ import java.util.List;
 @Api(description = "前台显示课程和老师")
 @RestController
 @RequestMapping("/eduservice/indexFront")
-@CrossOrigin
+//@CrossOrigin
 public class IndexFrontController {
 
     @Autowired

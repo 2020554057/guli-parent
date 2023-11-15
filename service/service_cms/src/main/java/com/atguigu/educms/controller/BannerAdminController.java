@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 @Api(description = "首页banner 后台管理控制器")
 @RestController
 @RequestMapping("/educms/bannerAdmin")
-@CrossOrigin
+//@CrossOrigin
 public class BannerAdminController {
     @Autowired
     private CrmBannerService bannerService;

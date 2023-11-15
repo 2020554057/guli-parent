@@ -20,6 +20,7 @@
     <modules>
         <module>service</module>
         <module>common</module>
+        <module>infrastructure</module>
     </modules>
     <packaging>pom</packaging><!--打包方式pom，表示该工程下还有子模块-->
 

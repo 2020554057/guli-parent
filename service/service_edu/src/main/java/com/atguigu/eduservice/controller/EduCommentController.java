@@ -28,7 +28,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/eduservice/comment")
-@CrossOrigin//跨域
+//@CrossOrigin//跨域
 public class EduCommentController {
 
     @Autowired

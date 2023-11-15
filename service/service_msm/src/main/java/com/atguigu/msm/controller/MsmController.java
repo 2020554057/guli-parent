@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 @Api(description = "阿里云短信验证服务")
 @RestController
 @RequestMapping("/edumsm/msm")
-@CrossOrigin
+//@CrossOrigin
 public class MsmController {
 
 //    阿里云短信服务
