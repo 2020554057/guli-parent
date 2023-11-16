@@ -151,11 +151,13 @@ public class EduTeacherController {
     @ApiOperation(value = "添加讲师")
     @PostMapping("/addTeacher")
     public R addTeacher(@RequestBody EduTeacher eduTeacher){
+
         boolean save = eduTeacherService.save(eduTeacher);
+
         if (save){
             return R.ok();
         }else {
-            return R.error();
+            return R.error().message("添加失败");
         }
     }
 

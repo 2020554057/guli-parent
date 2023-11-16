@@ -22,4 +22,5 @@ public interface EduTeacherService extends IService<EduTeacher> {
 
     //分页查询讲师
     public Map<String, Object> getTeacherFrontList(Page<EduTeacher> pageTeacher);
+
 }
